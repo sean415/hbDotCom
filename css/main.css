@@ -199,6 +199,12 @@ textarea {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .title-pic {
+    margin-left: -104px;
+  }
+}
+
 
 
 

@@ -58,6 +58,22 @@ function addPodcastContent(data) {
 	});
 }
 
+function addSpeakingContent(data) {
+	let speakingList = document.querySelector('.speaking-links')
+	data = data.sort((a, b) => {
+		return new Date(b.talk_date) - new Date(a.talk_date)
+	})
+
+	data.forEach((item) => {
+		let element = document.createElement('li')
+		let date = new Date(item.talk_date)
+		let formattedDate = `${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`
+		let template = `${item.conference_name} ("${item.name_of_talk}," ${formattedDate})`;
+		element.innerHTML = template
+		speakingList.appendChild(element)
+	})
+}
+
 function sortByCategory(data) {
 	let categories = {};
 	data.forEach((item) => {
@@ -126,7 +142,7 @@ function getSpeakingAppearances() {
 		});
 }
 
-Promise.all([getAboutContent(), getPublishedWriting(), getPodcastAppearances()])
+Promise.all([getAboutContent(), getPublishedWriting(), getPodcastAppearances(), getSpeakingAppearances()])
 	.then(() => {
 		document.body.classList.remove('loading');
 	});

@@ -1,4 +1,4 @@
-const PUBLISHED_WRITING_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/published_writing';
+const PUBLISHED_WRITING_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/published_writing?per_page=100';
 const ABOUT_CONTENT_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/pages/37';
 const PODCAST_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/podcast';
 const CONFERENCE_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/speaking';

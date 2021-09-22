@@ -2,6 +2,7 @@ const PUBLISHED_WRITING_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/published
 const ABOUT_CONTENT_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/pages/37';
 const PODCAST_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/podcast';
 const CONFERENCE_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/speaking';
+const FOOTER_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/footer';
 
 function addPublishedPieces(data) {
 	let contentTemplate = getTemplate('#site-section');
@@ -74,6 +75,19 @@ function addSpeakingContent(data) {
 	})
 }
 
+function addFooterContent(data) {
+	let footerSection = document.querySelector('.footer');
+	data.forEach((item) => {
+		let footerTitle = document.createElement('h1');
+		footerTitle.classList.add('section-title');
+		footerTitle.innerHTML = item.title.rendered;
+		footerParagraph = document.createElement('p');
+		footerParagraph.innerHTML = item.content.rendered;
+		footerSection.appendChild(footerTitle);
+		footerSection.appendChild(footerParagraph);
+	});
+}
+
 function sortByCategory(data) {
 	let categories = {};
 	data.forEach((item) => {
@@ -142,7 +156,20 @@ function getSpeakingAppearances() {
 		});
 }
 
-Promise.all([getAboutContent(), getPublishedWriting(), getPodcastAppearances(), getSpeakingAppearances()])
+function getFooter() {
+	return fetch(FOOTER_URL)
+		.then((response) => response.json())
+		.then((data) => {
+			addFooterContent(data);
+		})
+		.then(() => {
+			return new Promise((resolve, reject) => {
+				resolve();
+			});
+		});
+}
+
+Promise.all([getAboutContent(), getPublishedWriting(), getPodcastAppearances(), getSpeakingAppearances(), getFooter()])
 	.then(() => {
 		document.body.classList.remove('loading');
 	});

@@ -1,0 +1,82 @@
+.header
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  background-color: rgba(255,255,255,0.9)
+  padding: 15px 24px 20px
+  .backdrop
+    background-color: #fff
+    position: absolute
+    z-index: 1
+    top: 0
+    left: 0 
+    bottom: 0
+    right: 0
+    filter: blur(2px)
+    opacity: 0.9
+
+.title
+  font-size: 20px
+  font-family: apparat
+  font-weight: 400
+  text-transform: uppercase
+  z-index: 2
+  @media (min-width: 660px)
+    font-size: 36px
+
+
+.navigation
+  position: absolute
+  height: calc(100vh - 65px)
+  top: 65px
+  left: 0
+  right: 0
+  display: flex
+  visibility: hidden
+  flex-direction: column
+  gap: 20px
+  align-items: center
+  justify-content: center
+  text-transform: uppercase
+  z-index: 2
+  font-size: 14px
+  background: #fff
+  opacity: 0
+  transition: all 0.5s ease-out
+  .menuActive &
+    visibility: visible
+    opacity: 1
+    span
+      position: relative
+      transform: translateY(0)
+
+  span
+    text-decoration: none
+    color: inherit
+    transform: translateY(-20px)
+    transition: transform 0.25s ease-out 
+    &:visited
+      color: inherit
+    &:hover
+      text-decoration: underline
+    @media (min-width: 660px)
+      transform: none
+      
+  @media ( min-width: 660px)
+    display: flex
+    flex-direction: row
+    position: static
+    justify-content: flex-end
+    gap: 20px
+    opacity: 1
+    background: transparent
+    height: auto
+    visibility: visible
+  
+.menuToggle
+
+  @media ( min-width: 660px )
+    display: none
+    
+

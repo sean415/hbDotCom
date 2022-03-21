@@ -1,0 +1,34 @@
+{
+  "name": "hbdotcom",
+  "version": "1.0.0",
+  "description": "Simple personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sean415/hbDotCom.git"
+  },
+  "author": "Sean Slinsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sean415/hbDotCom/issues"
+  },
+  "homepage": "https://github.com/sean415/hbDotCom#readme",
+  "dependencies": {
+    "html-react-parser": "^1.4.5",
+    "next": "^12.0.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.38",
+    "sass": "^1.49.7",
+    "typescript": "^4.5.4"
+  }
+}

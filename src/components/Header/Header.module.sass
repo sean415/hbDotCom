@@ -37,13 +37,14 @@
   flex-direction: column
   gap: 20px
   align-items: center
-  justify-content: center
+  justify-content: flex-start
   text-transform: uppercase
   z-index: 2
   font-size: 14px
   background: #fff
   opacity: 0
   transition: all 0.5s ease-out
+  margin-top: 50px
   .menuActive &
     visibility: visible
     opacity: 1
@@ -56,10 +57,12 @@
     color: inherit
     transform: translateY(-20px)
     transition: transform 0.25s ease-out 
+    cursor: pointer
+    border-bottom: 3px solid transparent
     &:visited
       color: inherit
     &:hover
-      text-decoration: underline
+      border-bottom: 3px solid #000
     @media (min-width: 660px)
       transform: none
       
@@ -73,6 +76,7 @@
     background: transparent
     height: auto
     visibility: visible
+    margin-top: 0
   
 .menuToggle
 

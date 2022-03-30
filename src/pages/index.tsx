@@ -16,12 +16,16 @@ const AboutPage = (model: AboutPageModel) => {
       <Head>
         <title>Holly Burns - Freelance Journalist - SF Bay Area</title>
       </Head>
-      <section>
-        <figure className={Styles.profileImageWrapper}>
-          <img src={model.profileImage} alt="Holly Burns" className={``} />
-        </figure>
-        <h1>{model.title}</h1>
-        {parse(model.body)}
+      <section className={Styles.grid}>
+        <div className={Styles.content}>
+          <h1>{model.title}</h1>
+          {parse(model.body)}
+        </div>
+        <div>
+          <figure className={Styles.profileImageWrapper}>
+            <img src={model.profileImage} alt="Holly Burns" className={``} />
+          </figure>
+        </div>
       </section>
     </>
   )

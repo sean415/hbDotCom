@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/sean415/hbDotCom#readme",
   "dependencies": {
+    "he": "^1.2.0",
     "html-react-parser": "^1.4.5",
     "next": "^12.0.7",
     "react": "^17.0.2",

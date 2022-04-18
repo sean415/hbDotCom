@@ -2,6 +2,7 @@ import { fetchPublishedStories } from "../lib/wp-api";
 import Head from 'next/head';
 import { ArticleLink, ArticleLinkModel } from "../components/ArticleLink/article-link";
 import { ArticleList } from "../components/ArticleList/article-list";
+import he from 'he'
 
 export interface WritingPageModel {
   title: string,
@@ -9,7 +10,7 @@ export interface WritingPageModel {
 }
 
 interface ArticleLink {
-  title: string
+  title: he.decode(string)
   url: string
   date: Date
   image: {
@@ -19,7 +20,7 @@ interface ArticleLink {
 }
 
 interface ArticleSection {
-  title: string,
+  title: he.decode(string),
   links: Array<ArticleLink>
 }
 

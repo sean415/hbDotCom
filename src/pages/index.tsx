@@ -2,6 +2,8 @@ import { fetchAboutPageContent } from "../lib/wp-api";
 import parse from 'html-react-parser';
 import Head from 'next/head';
 
+import he from 'he'
+
 import Styles from '../styles/index.module.sass'
 
 export interface AboutPageModel {
@@ -38,8 +40,8 @@ export async function getStaticProps({params}): Promise<{ props: AboutPageModel,
   return {
     props: {
       profileImage: content._embedded['wp:featuredmedia']['0'].source_url,
-      title: content.title.rendered,
-      body: content.content.rendered.replace(/\n/, '')
+      title: he.decode(content.title.rendered),
+      body: he.decode(content.content.rendered.replace(/\n/, ''))
     },
     revalidate: 60
   }

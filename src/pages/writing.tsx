@@ -74,13 +74,14 @@ function mapStories(stories: []): Array<ArticleSection> {
 
 export default WritingPage;
 
-export async function getStaticProps({params}): Promise<{ props: WritingPageModel}>  {
+export async function getStaticProps({params}): Promise<{ props: WritingPageModel, revalidate: number}>  {
   let content = await fetchPublishedStories();
   console.log(content)
   return {
     props: {
       title: "Published Writing",
       sections: mapStories(content)
-    }
+    },
+    revalidate: 60
   }
 }

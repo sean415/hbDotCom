@@ -33,13 +33,14 @@ const AboutPage = (model: AboutPageModel) => {
 
 export default AboutPage;
 
-export async function getStaticProps({params}): Promise<{ props: AboutPageModel}>  {
+export async function getStaticProps({params}): Promise<{ props: AboutPageModel, revalidate}>  {
   let content = await fetchAboutPageContent();
   return {
     props: {
       profileImage: content._embedded['wp:featuredmedia']['0'].source_url,
       title: content.title.rendered,
       body: content.content.rendered.replace(/\n/, '')
-    }
+    },
+    revalidate: 60
   }
 }

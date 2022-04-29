@@ -10,7 +10,7 @@ export interface WritingPageModel {
 }
 
 interface ArticleLink {
-  title: he.decode(string)
+  title: string
   url: string
   date: Date
   image: {
@@ -20,7 +20,7 @@ interface ArticleLink {
 }
 
 interface ArticleSection {
-  title: he.decode(string),
+  title: string,
   links: Array<ArticleLink>
 }
 
@@ -52,7 +52,7 @@ function mapStories(stories: []): Array<ArticleSection> {
 
   stories.forEach((story: any) => {
     let articleLinkModel: ArticleLinkModel = {
-      title: story.title.rendered,
+      title: he.decode(story.title.rendered),
       url: story.url
     }
     if(publications[story.publication]) {

@@ -21,9 +21,12 @@
   },
   "homepage": "https://github.com/sean415/hbDotCom#readme",
   "dependencies": {
+    "@formspree/react": "^2.2.4",
+    "@sendgrid/mail": "^7.6.2",
     "he": "^1.2.0",
     "html-react-parser": "^1.4.5",
     "next": "^12.0.7",
+    "nodemailer": "^6.7.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

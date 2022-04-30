@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header className={`${Styles.header} ${!!menuToggled ? Styles.menuActive : 'false'}`}>
       <h1 className={Styles.title}>Holly Burns</h1>
-      <div className={Styles.menuToggle} onClick={() => setMenuToggled(!menuToggled)}> --- </div>
+      <div className={Styles.menuToggle} onClick={() => setMenuToggled(!menuToggled)}></div>
       <nav className={Styles.navigation}>
         <Link href="/"><span onClick={() => { setMenuToggled(false) }}>About</span></Link>
         <Link href="/writing"><span onClick={() => { setMenuToggled(false) }}>Writing</span></Link>

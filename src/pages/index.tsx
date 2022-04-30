@@ -22,7 +22,7 @@ const AboutPage = (model: AboutPageModel) => {
       <section className={Styles.grid}>
         <div className={Styles.content}>
           <BodyContent>
-            <h1>{model.title}</h1>
+            {/* <h1>{model.title}</h1> */}
             {parse(model.body)}
           </BodyContent>
         </div>

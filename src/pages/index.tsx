@@ -1,6 +1,7 @@
 import { fetchAboutPageContent } from "../lib/wp-api";
 import parse from 'html-react-parser';
 import Head from 'next/head';
+import { BodyContent } from "../components/BodyContent/body-content";
 
 import he from 'he'
 
@@ -20,8 +21,10 @@ const AboutPage = (model: AboutPageModel) => {
       </Head>
       <section className={Styles.grid}>
         <div className={Styles.content}>
-          <h1>{model.title}</h1>
-          {parse(model.body)}
+          <BodyContent>
+            <h1>{model.title}</h1>
+            {parse(model.body)}
+          </BodyContent>
         </div>
         <div>
           <figure className={Styles.profileImageWrapper}>

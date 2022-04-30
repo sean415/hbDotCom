@@ -2,7 +2,7 @@
   display: flex
   flex-wrap: wrap
   justify-content: space-between
-  align-items: center
+  align-items: flex-end
   background-color: rgba(255,255,255,0.9)
   padding: 15px 24px 20px
   font-family: apparat
@@ -33,6 +33,7 @@
   font-weight: 300
   color: #777
   text-transform: uppercase
+  margin-left: 2px // align j with h above
   @media (min-width: 660px)
     font-size: 16px
 
@@ -129,4 +130,11 @@
   @media ( min-width: 660px )
     display: none
     
-
+.socialLinks
+  display: flex
+  gap: 10px
+  a
+    :hover
+      opacity: 0.5
+  @media ( min-width: 660px )
+    gap: 20px

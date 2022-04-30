@@ -11,8 +11,7 @@ export default function Contact() {
       </Head>
       <div className={styles.contactPage}>
         <BodyContent>
-          <h1>Contact Me</h1>
-          <p>You can email me at hollyburnswritesATgmail.com or find me on LinkedIn. I am also on Twitter, though it just kind of feels like a lot of people shouting at once.</p>
+          <p>I’m available for written assignments, interviews, and speaking engagements. If you’d like to work together or you have feedback on a story, I’d love to hear from you. </p>
         </BodyContent>
         <div className={styles.contactForm}>
           <ContactForm />

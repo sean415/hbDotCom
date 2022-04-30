@@ -5,6 +5,8 @@
   align-items: center
   background-color: rgba(255,255,255,0.9)
   padding: 15px 24px 20px
+  font-family: apparat
+  line-height: 1
   .backdrop
     background-color: #fff
     position: absolute
@@ -15,16 +17,24 @@
     right: 0
     filter: blur(2px)
     opacity: 0.9
+  &.menuActive
+    background-color: rgba(255,255,255,1)
 
 .title
   font-size: 20px
-  font-family: apparat
   font-weight: 400
   text-transform: uppercase
   z-index: 2
+  margin-bottom: 10px
   @media (min-width: 660px)
     font-size: 36px
-
+.subtitle
+  font-size: 12px
+  font-weight: 300
+  color: #777
+  text-transform: uppercase
+  @media (min-width: 660px)
+    font-size: 16px
 
 .navigation
   position: absolute
@@ -44,7 +54,7 @@
   background: #fff
   opacity: 0
   transition: all 0.5s ease-out
-  margin-top: 50px
+  padding-top: 50px
   .menuActive &
     visibility: visible
     opacity: 1
@@ -77,6 +87,7 @@
     height: auto
     visibility: visible
     margin-top: 0
+    padding-top: 0
   
 .menuToggle
   position: relative

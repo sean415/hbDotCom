@@ -79,6 +79,41 @@
     margin-top: 0
   
 .menuToggle
+  position: relative
+  width: 24px
+  height: 24px
+  transition: all 0.25s ease-out
+  cursor: pointer
+  &::before,
+  &::after
+    position: absolute
+    top: 50%
+    content: " "
+    left: 0
+    width: 100%
+    transition: all 0.2s ease-out
+
+  &::before
+    transform: translateY(-5px)
+    transform-origin: center
+    border-top: 2px solid #000
+  &::after
+    position: absolute
+    top: 50%
+    transform: translateY(5px)
+    transform-origin: center
+    left: 0
+    width: 100%
+    content: " "
+    border-bottom: 2px solid #000
+  .menuActive &
+    transform: rotate(-180deg)
+    &::before
+      transform: rotate(45deg)
+      transform-origin: center
+    &::after
+      transform: rotate(-45deg)
+      transform-origin: center
 
   @media ( min-width: 660px )
     display: none

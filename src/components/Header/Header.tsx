@@ -3,11 +3,15 @@ import { useEffect, useState } from 'react';
 import Styles from './Header.module.sass';
 import Image from 'next/image'
 
+const goHome = () => {
+  window.location.href = '/'
+}
+
 export const Header = () => {
   const [ menuToggled, setMenuToggled ] = useState(false);
   return (
     <header className={`${Styles.header} ${!!menuToggled ? Styles.menuActive : 'false'}`}>
-      <div className={Styles.titleBlock}>
+      <div className={Styles.titleBlock} onClick={goHome}>
         <h1 className={Styles.title}>Holly Burns</h1>
         <h3 className={Styles.subtitle}>Journalist &amp; Writer</h3>
       </div>

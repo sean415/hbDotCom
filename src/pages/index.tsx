@@ -28,7 +28,7 @@ const AboutPage = (model: AboutPageModel) => {
         </div>
         <div>
           <figure className={Styles.profileImageWrapper}>
-            <img src={model.profileImage} alt="Holly Burns" className={``} />
+            <img src={model.profileImage} alt="Holly Burns" className={Styles.profilePic} />
           </figure>
         </div>
       </section>

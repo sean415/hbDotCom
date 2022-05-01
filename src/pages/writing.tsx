@@ -63,7 +63,8 @@ function mapStories(stories: []): Array<ArticleSection> {
   });
 
   for(const [key, value] of Object.entries(publications)) {
-    sections.push({ title: key, links: value} as ArticleSection);
+    const title = `For ${key}`
+    sections.push({ title: title, links: value} as ArticleSection);
   }
 
   sections = sections.sort(function(a, b) {
@@ -76,8 +77,7 @@ function mapStories(stories: []): Array<ArticleSection> {
 export default WritingPage;
 
 export async function getStaticProps({params}): Promise<{ props: WritingPageModel, revalidate: number}>  {
-  let content = await fetchPublishedStories();
-  console.log(content)
+  const content = await fetchPublishedStories();
   return {
     props: {
       title: "Published Writing",

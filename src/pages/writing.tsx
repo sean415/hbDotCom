@@ -25,6 +25,7 @@ interface ArticleSection {
 }
 
 const WritingPage = (model: WritingPageModel) => {
+  const sectionTitlePrefix = "For"
   return (
     <>
       <Head>
@@ -33,7 +34,7 @@ const WritingPage = (model: WritingPageModel) => {
       {model.sections.map(((section, index) => {
         return (
           <section key={index}>
-            <h3>{section.title}</h3>
+            <h3>{sectionTitlePrefix} <em>{section.title}</em></h3>
             <ArticleList>
               {section.links.map((link, index) => {
                 return <ArticleLink {...link} />
@@ -63,7 +64,7 @@ function mapStories(stories: []): Array<ArticleSection> {
   });
 
   for(const [key, value] of Object.entries(publications)) {
-    const title = `For ${key}`
+    const title = key
     sections.push({ title: title, links: value} as ArticleSection);
   }
 

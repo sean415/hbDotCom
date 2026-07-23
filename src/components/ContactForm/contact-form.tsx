@@ -1,3 +1,5 @@
+'use client';
+
 import { useForm, ValidationError } from '@formspree/react'
 import { useState } from 'react'
 import styles from './contact-form.module.sass'

@@ -5,17 +5,20 @@ const PODCAST_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/podcast';
 const CONFERENCE_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/speaking';
 const FOOTER_URL = 'http://cms.hollyburns.com/wp-json/wp/v2/footer';
 
+// Cache WordPress responses and revalidate them at most once a minute (ISR).
+const REVALIDATE_SECONDS = 60;
+
 export async function fetchAboutPageContent() {
-  let content = await fetch(ABOUT_CONTENT_URL);
+  const content = await fetch(ABOUT_CONTENT_URL, { next: { revalidate: REVALIDATE_SECONDS } });
   return content.json();
 }
 
 export async function fetchPublishedStories() {
-  let content = await fetch(PUBLISHED_WRITING_URL);
+  const content = await fetch(PUBLISHED_WRITING_URL, { next: { revalidate: REVALIDATE_SECONDS } });
   return content.json();
 }
 
 export async function fetchContactPageContent() {
-  const content = await fetch(CONTACT_CONTENT_URL);
+  const content = await fetch(CONTACT_CONTENT_URL, { next: { revalidate: REVALIDATE_SECONDS } });
   return content.json();
 }

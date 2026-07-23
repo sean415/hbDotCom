@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import styles from './article-list.module.sass'
 
-export const ArticleList:React.FC = (props: { children }) => {
+export const ArticleList = ({ children }: { children: ReactNode }) => {
   return <ul className={styles.articleList}>
-    {props.children}
+    {children}
   </ul>
 }

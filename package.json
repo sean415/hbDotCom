@@ -21,18 +21,19 @@
   },
   "homepage": "https://github.com/sean415/hbDotCom#readme",
   "dependencies": {
-    "@formspree/react": "^2.2.4",
-    "@sendgrid/mail": "^7.6.2",
+    "@formspree/react": "^3.0.0",
     "he": "^1.2.0",
-    "html-react-parser": "^1.4.5",
-    "next": "^12.0.7",
-    "nodemailer": "^6.7.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "html-react-parser": "^5.2.2",
+    "next": "^15.5.21",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.38",
-    "sass": "^1.49.7",
-    "typescript": "^4.5.4"
+    "@types/he": "^1.2.3",
+    "@types/node": "^20.17.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "sass": "^1.83.0",
+    "typescript": "^5.7.2"
   }
 }

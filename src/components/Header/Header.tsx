@@ -1,5 +1,7 @@
+'use client';
+
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Styles from './Header.module.sass';
 import Image from 'next/image'
 
@@ -22,11 +24,11 @@ export const Header = () => {
           <Link href="/writing"><span onClick={() => { setMenuToggled(false) }}>Writing</span></Link>
           <Link href="/contact"><span onClick={() => { setMenuToggled(false) }}>Contact</span></Link>
           <div className={Styles.socialLinks}>
-            <a href="https://twitter.com/hollyburns" target="_blank"> 
-              <Image src="/assets/images/twitter-borderless.svg" width="20px" height="20px" />
+            <a href="https://twitter.com/hollyburns" target="_blank" rel="noreferrer">
+              <Image src="/assets/images/twitter-borderless.svg" width={20} height={20} alt="Twitter" />
             </a>
-            <a href="https://www.linkedin.com/in/hollyburns/" target="_blank"> 
-              <Image src="/assets/images/linkedin-roundedrect.svg" width="20px" height="20px" />
+            <a href="https://www.linkedin.com/in/hollyburns/" target="_blank" rel="noreferrer">
+              <Image src="/assets/images/linkedin-roundedrect.svg" width={20} height={20} alt="LinkedIn" />
             </a>
           </div>
         </nav>

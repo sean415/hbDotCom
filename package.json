@@ -20,6 +20,9 @@
     "url": "https://github.com/sean415/hbDotCom/issues"
   },
   "homepage": "https://github.com/sean415/hbDotCom#readme",
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@formspree/react": "^3.0.0",
     "he": "^1.2.0",
